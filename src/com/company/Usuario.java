@@ -45,4 +45,9 @@ public class Usuario {
     public void setAnoNascimento(int anoNascimento) {
         this.anoNascimento = anoNascimento;
     }
+
+    @Override
+    public String toString() {
+        return "Nome: " + getNome() + ", Senha: " + getSenha() + ", Ano do Nascimento: " + getAnoNascimento();
+    }
 }

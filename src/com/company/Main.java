@@ -23,10 +23,10 @@ public class Main {
                 SingletonBD.adicionarUsuario();
             }
             else if(opcao == 2) {
-                SingletonBD.deletarUsuario();
+                SingletonBD.listarUsuarios();
             }
             else if(opcao == 3) {
-                SingletonBD.listarUsuarios();
+                SingletonBD.deletarUsuario();
             }
             else if(opcao == 4) {
                 SingletonBD.atualizarUsuario();
