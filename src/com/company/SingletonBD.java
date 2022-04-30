@@ -1,8 +1,11 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SingletonBD {
+
+    private static ArrayList<Usuario> listaUsuario = new ArrayList<Usuario>();
 
     private SingletonBD() { }
 
@@ -12,14 +15,14 @@ public class SingletonBD {
         String usuario = sc.next();
         System.out.println("Informe a senha do usuário: ");
         String senha = sc.next();
-        System.out.println("Informe o nome completo: ");
+        System.out.println("Informe o nome: ");
         String name = sc.next();
         System.out.println("Informe o ano de nascimento do usuário: ");
         Integer anoNascimento = sc.nextInt();
 
         Usuario novoUsuario = new Usuario(usuario, senha, name, anoNascimento);
 
-        listarUsuarios();
+        listaUsuario.add(novoUsuario);
 
     }
 
