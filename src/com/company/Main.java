@@ -15,7 +15,6 @@ public class Main {
             System.out.println("(2) Listar Usuario");
             System.out.println("(3) Deletar Usuário");
             System.out.println("(4) Atualizar Usuário\n");
-            System.out.println("(5) Audit Usuário\n");
             System.out.println("(9) Sair\n");
             System.out.print("Opção: ");
             opcao = sc.nextInt();
