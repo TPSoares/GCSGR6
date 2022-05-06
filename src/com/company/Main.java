@@ -15,6 +15,7 @@ public class Main {
             System.out.println("(2) Listar Usuario");
             System.out.println("(3) Deletar Usuário");
             System.out.println("(4) Atualizar Usuário\n");
+            System.out.println("(5) Audit Usuário\n");
             System.out.println("(9) Sair\n");
             System.out.print("Opção: ");
             opcao = sc.nextInt();
@@ -23,10 +24,10 @@ public class Main {
                 SingletonBD.adicionarUsuario();
             }
             else if(opcao == 2) {
-                SingletonBD.deletarUsuario();
+                SingletonBD.listarUsuarios();
             }
             else if(opcao == 3) {
-                SingletonBD.listarUsuarios();
+                SingletonBD.deletarUsuario();
             }
             else if(opcao == 4) {
                 SingletonBD.atualizarUsuario();
