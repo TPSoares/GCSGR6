@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class SingletonBD {
 
@@ -10,7 +11,17 @@ public class SingletonBD {
 
     public static void adicionarUsuario(){ }
 
-    public static void deletarUsuario(){ }
+    public static void deletarUsuario(){
+        Scanner sc = new Scanner (System.in);
+        System.out.println(" digite o usuario que deseja remover");
+        String usuarioD = sc.next();
+        for (Usuario usuario: listaUsuario) {
+            if (usuario.getUsuario().equals(usuarioD)) {
+                listaUsuario.remove(usuario);
+                break;
+            }
+        }
+    }
 
     public static void atualizarUsuario(){ }
 
