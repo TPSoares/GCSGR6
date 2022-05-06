@@ -31,10 +31,6 @@ public class SingletonBD {
 
     public static void atualizarUsuario(){ }
 
-    public static void listarUsuarios() {
-        System.out.println("*** LISTA DE USUÁRIOS ***");
-        for (Usuario usuario : listaUsuario) {
-            System.out.println(usuario.toString() + ", ");
-        }
-    }
+    public static void listarUsuarios() { }
+
 }
