@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class SingletonBD {
@@ -71,4 +72,28 @@ public class SingletonBD {
             System.out.println(usuario.toString() + ", ");
         }
     }
+
+    public static void calcularIdadeUsuario(){
+        Calendar calendar = Calendar.getInstance();
+        Integer anoAtual = calendar.get(Calendar.YEAR);
+
+        boolean found = false;
+        Scanner sc = new Scanner(System.in);
+        String usuarioInformado, nome, senha;
+        int anoNascimento;
+        System.out.print("Usuário para calcular a idade: ");
+        usuarioInformado = sc.nextLine();
+        for (Usuario usuario : listaUsuario) {
+            if (usuario.getUsuario().equals(usuarioInformado)) {
+                found = true;
+                System.out.print("A idade do usuário nome " + usuario.getNome()
+                        + " é " + (anoAtual - usuario.getAnoNascimento()) + " anos.\n");
+                break;
+            }
+        }
+        if (!found)
+            System.out.println("Usuário não encontrado.\n");
+
+    }
+
 }

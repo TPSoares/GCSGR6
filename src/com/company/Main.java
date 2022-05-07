@@ -14,7 +14,8 @@ public class Main {
             System.out.println("(1) Cadastrar Usuário");
             System.out.println("(2) Listar Usuario");
             System.out.println("(3) Deletar Usuário");
-            System.out.println("(4) Atualizar Usuário\n");
+            System.out.println("(4) Atualizar Usuário");
+            System.out.println("(5) Calcular idade do Usuário\n");
             System.out.println("(9) Sair\n");
             System.out.print("Opção: ");
             opcao = sc.nextInt();
@@ -30,6 +31,9 @@ public class Main {
             }
             else if(opcao == 4) {
                 SingletonBD.atualizarUsuario();
+            }
+            else if(opcao == 5) {
+                SingletonBD.calcularIdadeUsuario();
             }
             else if(opcao == 9) {
                 System.exit(0);
