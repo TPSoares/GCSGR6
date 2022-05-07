@@ -18,6 +18,12 @@ public class SingletonBD {
 
     private SingletonBD() { }
 
+    private static void validarSenha(String senha) throws InvalidPasswordException {
+        if (senha.length() <= 6) {
+            throw new InvalidPasswordException("Senha deve ser maior que 6 caracteres");
+        }
+    }
+
     public static void adicionarUsuario(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Informe o username: ");
