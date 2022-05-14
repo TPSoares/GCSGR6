@@ -29,15 +29,19 @@ public class SingletonBD {
     }
 
     public static void deletarUsuario(){
+        boolean found = false;
         Scanner sc = new Scanner (System.in);
         System.out.println(" digite o usuario que deseja remover");
         String usuarioD = sc.next();
         for (Usuario usuario: listaUsuario) {
             if (usuario.getUsuario().equals(usuarioD)) {
+                found = true;
                 listaUsuario.remove(usuario);
                 break;
             }
         }
+        if (!found)
+            System.out.println("Usuário não encontrado");
     }
 
     public static void atualizarUsuario() {
@@ -66,7 +70,26 @@ public class SingletonBD {
             System.out.println("Usuário não encontrado");
     }
 
-    public static void listarUsuarios(){
+    public static void atualizarSenha() {
+        boolean found = false;
+        Scanner sc = new Scanner(System.in);
+        System.out.println(" digite o usuário que deseja alterar a senha:");
+        String user, senha;
+        user = sc.nextLine();
+        for (Usuario usuario : listaUsuario) {
+            if (usuario.getUsuario().equals(user)) {
+                found = true;
+                System.out.print("Nova senha do usuário: ");
+                senha = sc.nextLine();
+                usuario.setSenha(senha);
+                break;
+            }
+        }
+        if (!found)
+            System.out.println("Usuário não encontrado");
+    }
+
+        public static void listarUsuarios(){
         System.out.println("*** LISTA DE USUÁRIOS ***");
         for (Usuario usuario: listaUsuario) {
             System.out.println(usuario.toString() + ", ");
