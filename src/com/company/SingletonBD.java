@@ -2,9 +2,9 @@
  * Usamos o Exercicio orignal do modulo e adicionamos 5 tarefas
  * 1- calcular a idade do usuario
  * 2- alterar a senha de usuario
- * 3- valdiar a senha para que tenha comprimento suficiente
+ * 3- validar a senha para que tenha comprimento suficiente
  * 4- adicionar um campo de e-mail para o cadastro de usuario
- * 5- adcionar este Java Doc
+ * 5- adicionar este Java Doc
  */
 package com.company;
 
