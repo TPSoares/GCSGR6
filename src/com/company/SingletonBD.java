@@ -18,12 +18,27 @@ public class SingletonBD {
 
     private SingletonBD() { }
 
+    private static void validarSenha(String senha) throws InvalidPasswordException {
+        if (senha.length() <= 6) {
+            throw new InvalidPasswordException("Senha deve ser maior que 6 caracteres");
+        }
+    }
+
     public static void adicionarUsuario(){
         Scanner sc = new Scanner(System.in);
+        String senha;
         System.out.println("Informe o username: ");
         String usuario = sc.next();
-        System.out.println("Informe a senha do usuário: ");
-        String senha = sc.next();
+        while (true) {
+            System.out.println("Informe a senha do usuário: ");
+            senha = sc.next();
+            try {
+                validarSenha(senha);
+                break;
+            } catch (InvalidPasswordException e) {
+                System.out.println(e.getMessage());
+            }
+        }
         System.out.println("Informe o nome: ");
         String name = sc.next();
         System.out.println("Informe o ano de nascimento do usuário: ");
@@ -68,8 +83,16 @@ public class SingletonBD {
                 System.out.print("Atualizar data de nascimento: ");
                 anoNascimento = sc.nextInt();
                 usuario.setAnoNascimento(anoNascimento);
-                System.out.print("Atualizar senha: ");
-                senha = sc.nextLine();
+                while (true) {
+                    System.out.print("Atualizar senha: ");
+                    senha = sc.nextLine();
+                    try {
+                        validarSenha(senha);
+                        break;
+                    } catch (InvalidPasswordException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
                 usuario.setSenha(senha);
                 break;
             }
@@ -87,8 +110,16 @@ public class SingletonBD {
         for (Usuario usuario : listaUsuario) {
             if (usuario.getUsuario().equals(user)) {
                 found = true;
-                System.out.print("Nova senha do usuário: ");
-                senha = sc.nextLine();
+                while (true) {
+                    System.out.print("Nova senha do usuário: ");
+                    senha = sc.nextLine();
+                    try {
+                        validarSenha(senha);
+                        break;
+                    } catch (InvalidPasswordException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
                 usuario.setSenha(senha);
                 break;
             }
